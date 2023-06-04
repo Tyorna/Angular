@@ -20,7 +20,7 @@
     <div [title]="title" *ngFor="let todo of todos, let i= index" class=" d-flex">
 
       <div *ngIf="todo.completed == true">
-        <li class="fs-5">{{todo.title}}</li>
+        <li class="fs-5"><button class="btn btn-danger rounded btn-sm text-center me-2" (click)="elimina(todo.id, i)">X</button>{{todo.title}}</li>
       </div>
     </div>
   </div>

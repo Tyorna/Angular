@@ -10,7 +10,7 @@ export class TodoService {
 
   constructor() {}
 
-  creaTodo(title: string) {
+  creaTodo(title: string):void {
     this.todos.push({ title, completed: false, id: this.todos.length +1});
     console.log(this.todos)
     console.log('Funziona?');
@@ -20,10 +20,6 @@ export class TodoService {
      this.todos = this.todos.map((todo) =>
      todo.id == id ? { ...todo, ...dato} : todo);
   }
-
- filter(){
-
- }
 
   async getTodos(){
     return this.todos;

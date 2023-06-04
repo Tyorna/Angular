@@ -23,7 +23,8 @@
       <div *ngIf="todo.completed == false" class=" d-flex mb-2">
         <button class="btn btn-success rounded btn-sm text-center" (click)="todoCompletato(todo.id, i)"><code
             class="text-white">&#10003;</code></button>
-        <p class="m-0 ms-2">{{todo.title}}</p>
+        <button class="btn btn-danger rounded btn-sm text-center ms-2" (click)="elimina(todo.id, i)">X</button>
+        <p class="m-0 ms-2"><span class="me-2">{{i + 1 +"."}}</span>{{todo.title}}</p>
       </div>
     </div>
   </div>

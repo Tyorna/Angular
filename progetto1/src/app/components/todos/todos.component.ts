@@ -27,13 +27,24 @@ export class TodosComponent implements OnInit {
     this.todos= await this.todoSrv.getTodos()
   }
 
-  NewTask(nuovoTodo: string) {  setTimeout(() => {
+  NewTask(nuovoTodo: string): void {  setTimeout(() => {
+    if (!nuovoTodo){
+       alert ('Inserire una task');
+    } else{
     this.todoSrv.creaTodo(nuovoTodo);
-  }, 2000)}
+    this.nuovoTodo = "";
+  }}, 2000)}
 
   todoCompletato (id: number, i: number): void{
     setTimeout(() => {
      this.todoSrv.todoFatta({completed: true}, id);
+     console.log(this.todos);
+     this.recuperoTask();
+  }, 2000)}
+
+  elimina (id: number, i: number): void{
+    setTimeout(() => {
+     this.todos.splice(i, 1);
      console.log(this.todos);
      this.recuperoTask();
   }, 2000)}

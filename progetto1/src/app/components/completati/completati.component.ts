@@ -28,4 +28,11 @@ export class CompletatiComponent implements OnInit {
  completati():boolean{
    return this.todos.filter( e => e.completed === true).length > 0;
  }
+
+ elimina (id: number, i: number): void{
+  setTimeout(() => {
+   this.todos.splice(i, 1);
+   console.log(this.todos);
+   this.recuperoTask();
+}, 2000)}
 }
