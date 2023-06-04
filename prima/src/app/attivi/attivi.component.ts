@@ -18,4 +18,5 @@ export class AttiviComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

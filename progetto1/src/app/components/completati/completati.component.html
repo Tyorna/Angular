@@ -1,0 +1,30 @@
+<div
+  class="d-flex justify-content-center align-items-center flex-column m-5 bg-success-subtle p-5 w-50 border border-success">
+  <div *ngIf="loading; else todosList" class="mb-5">
+    <h2 class="mb-5">Recupero task...</h2>
+    <div class="d-flex justify-content-center">
+      <div class="spinner-grow text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #todosList>
+  <div *ngIf="todos.length > 0  && completati(); else noTodos" class="mb-5">
+    <div [title]="title" *ngFor="let todo of todos, let i= index" class=" d-flex">
+
+      <div *ngIf="todo.completed == true">
+        <li class="fs-5">{{todo.title}}</li>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #noTodos>
+  <h2>Non ci sono task completate</h2>
+</ng-template>

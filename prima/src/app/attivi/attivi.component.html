@@ -1,10 +1,5 @@
 <div *ngFor="let post of posts; let i=index">
- <div *ngIf ="post.active == true">
-   <div class="card m-5">
-      <h2>Post</h2>
-      <h3>{{post.title}}</h3>
-      <p>{{post.body}}</p>
-      <p class="bg-success-subtle">Id: {{i+1}}</p>
-   </div>
- </div>
+  <app-post *ngIf="post.active == true">
+      <button type="button" class="btn btn-primary m-auto mb-2 w-25" (click)="post.active = false">Disbilita</button>
+  </app-post>
 </div>

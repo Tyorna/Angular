@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AttiviComponent } from './attivi/attivi.component';
 import { NonattiviComponent } from './nonattivi/nonattivi.component';
 import { HomeComponent } from './home/home.component';
+import { PostComponent } from './postnuovi/post/post.component';
 
 const routes: Route[] = [
   {
@@ -27,7 +28,8 @@ const routes: Route[] = [
     AppComponent,
     AttiviComponent,
     NonattiviComponent,
-    HomeComponent
+    HomeComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

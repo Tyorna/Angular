@@ -3,30 +3,35 @@
         "id":1,
         "body":"Sit minim deserunt enim enim nisi. Eiusmod incididunt dolore et ea anim. Non exercitation id voluptate et velit quis anim officia fugiat esse laborum nisi fugiat non.",
         "title":"Dolor velit sint tempor culpa cupidatat ipsum do ad tempor eiusmod.",
+        "type": "news",
         "active":true
     },
     {
         "id":2,
         "body":"Sit minim deserunt enim enim nisi. Eiusmod incididunt dolore et ea anim. Non exercitation id voluptate et velit quis anim officia fugiat esse laborum nisi fugiat non.",
         "title":"Dolor velit sint tempor culpa cupidatat ipsum do ad tempor eiusmod.",
+        "type": "politic",
         "active":true
     },
     {
         "id":3,
         "body":"Sit minim deserunt enim enim nisi. Eiusmod incididunt dolore et ea anim. Non exercitation id voluptate et velit quis anim officia fugiat esse laborum nisi fugiat non.",
         "title":"Dolor velit sint tempor culpa cupidatat ipsum do ad tempor eiusmod.",
+        "type": "education",
         "active":true
     },
     {
         "id":4,
         "body":"Sit minim deserunt enim enim nisi. Eiusmod incididunt dolore et ea anim. Non exercitation id voluptate et velit quis anim officia fugiat esse laborum nisi fugiat non.",
         "title":"Dolor velit sint tempor culpa cupidatat ipsum do ad tempor eiusmod.",
+        "type": "education",
         "active":false
     },
     {
         "id":5,
         "body":"Sit minim deserunt enim enim nisi. Eiusmod incididunt dolore et ea anim. Non exercitation id voluptate et velit quis anim officia fugiat esse laborum nisi fugiat non.",
         "title":"Dolor velit sint tempor culpa cupidatat ipsum do ad tempor eiusmod.",
+        "type": "news",
         "active":false
     }
 ]
