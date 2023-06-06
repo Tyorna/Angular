@@ -1,3 +1,73 @@
+<div class="container mt-3">
+  <h1 class="text-center">Solo smontaggio esempio prof</h1>
+</div>
 <div class="container">
-  <h1>Supereroi 2</h1>
+  <div class="row">
+      <div class="col">
+          <form [formGroup]="contenitoreForm">
+              <div formGroupName="userInfo">
+                  <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" class="form-control" formControlName="name" />
+                      <span *ngIf="
+                              getFormC('userInfo.name')?.invalid &&
+                              getFormC('userInfo.name')?.touched
+                          ">
+                          <ng-container *ngIf="
+                                  getErrorsC('userInfo.name', 'required')
+                              ">Campo name obbligatorio
+                          </ng-container>
+                      </span>
+                  </div>
+                  <div class="form-group">
+                      <label for="alterEgo">AlterEgo</label>
+                      <input type="alterEgo" id="alterEgo" class="form-control" formControlName="alterEgo" />
+                      <span *ngIf="
+                              getFormC('userInfo.alterEgo')?.invalid &&
+                              getFormC('userInfo.alterEgo')?.touched">
+
+                          <ng-container *ngIf="getErrorsC('userInfo.alterEgo', 'required')">Campo alterEgo
+                              obbligatorio</ng-container>
+                      </span>
+                  </div>
+              </div>
+              <div formArrayName="power" class="mb-3">
+                  <button type="button" class="btn btn-success" (click)="addPower()">
+                      Powers
+                  </button>
+                  <div class="form-group mb-2" *ngFor="let power of getPowers(); let i = index">
+                      <input type="text" class="form-control" [formControlName]="i" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label for="enemy">enemy</label>
+                <input type="enemy" id="enemy" class="form-control" formControlName="enemy" />
+                <span *ngIf="
+                        getFormC('userInfo.enemy')?.invalid &&
+                        getFormC('userInfo.enemy')?.touched">
+
+                    <ng-container *ngIf="getErrorsC('userInfo.enemy', 'required')">Campo enemy
+                        obbligatorio</ng-container>
+                </span>
+            </div>
+
+            <div class="form-group">
+              <label for="planet">Planet</label>
+              <input type="planet" id="planet" class="form-control" formControlName="planet" />
+              <span *ngIf="
+                      getFormC('userInfo.planet')?.invalid &&
+                      getFormC('userInfo.planet')?.touched">
+
+                  <ng-container *ngIf="getErrorsC('userInfo.planet', 'required')">Campo planet
+                      obbligatorio</ng-container>
+              </span>
+          </div>
+              <button type="submit" (click)="submitForm()" class="btn btn-primary"
+                  [disabled]="contenitoreForm.invalid">
+                  Invia
+              </button>
+          </form>
       </div>
+  </div>
+</div>
