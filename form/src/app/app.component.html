@@ -19,11 +19,16 @@
                           </div>
 
                           <div class="form-group">
-                              <label for="power">Power</label>
-                              <input type="text" id="power" name="power" class="form-control" [ngModel]="userForm.power" required
-                              #power="ngModel">
-                              <p *ngIf="power.invalid && power.touched"><strong>Questo campo è obbligatorio</strong></p>
-                          </div>
+                            <label for="power">Power</label>
+                            <select id="power" name="power" class="form-select" [ngModel]="userForm.power" required
+                            #power="ngModel">
+                                <option value=""></option>
+                                <option value="volo">Volo</option>
+                                <option value="telecinesi">Telecinesi</option>
+                                <option value="immortalità">Immortalità</option>
+                                <option value="Invisibilità">Invisibilità</option>
+                            </select>
+                        </div>
 
                           <div class="form-group">
                               <label for="enemy">Enemy</label>
