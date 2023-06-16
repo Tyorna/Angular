@@ -1,1 +1,24 @@
-<p>registrazione works!</p>
+<div class="father">
+  <div class="container text-center">
+    <form #form="ngForm" (ngSubmit)="registra(form)">
+      <div class="form-group  mb-4">
+        <label for="name" class=" mb-2 text-white fw-semibold">Nome</label>
+        <input name="name" required ngModel class="form-control w-50 m-auto" id="name" type="text"
+          placeholder="Inserisci il nome utente">
+      </div>
+      <div class="form-group  mb-4">
+        <label for="email" class=" mb-2 text-white fw-semibold">Email</label>
+        <input type="email" name="email" id="email" class="form-control w-50 m-auto" placeholder="pippo@email.com"
+          required ngModel>
+      </div>
+      <div class="form-group  mb-3">
+        <label for="password" class=" mb-2 text-white fw-semibold">Password</label>
+        <input type="password" id="password" name="password" class="form-control w-50 m-auto"
+          placeholder="Crea una password" required ngModel>
+      </div>
+      <button type="submit" [disabled]="form.invalid" [ngClass]="{'btn-danger': form.invalid}"
+        class="btn btn-success border border-3">Registrati</button>
+      <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status"></span>
+    </form>
+  </div>
+</div>

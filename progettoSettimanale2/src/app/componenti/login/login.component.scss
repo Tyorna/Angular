@@ -1,0 +1,64 @@
+html {
+  box-sizing: border-box;
+}
+
+.father {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    125deg,
+    #000000 15%,
+    #4a0f18 25%,
+    #701212 30%,
+    #d51212 32%,
+    #a51111 35%,
+    #0E1B4E 40%,
+    #031C91 41%,
+    #020e44 44%,
+    #9093C8 45%,
+    #701212 48%,
+    #d51212 49%,
+    #a51111 50%,
+    #dc8b40 52%,
+    #fb7a02 53%,
+    #D3A63D 55%,
+    #7A2443 57%,
+    #99607B 58%,
+    #d51212 60%,
+    #3E1742 65%,
+    #701212 68%,
+    #d51212 70%,
+    #a51111 73%,
+    #dc8b40 74%,
+    #fb7a02 75%,
+    #D3A63D 77%,
+    #a51111 80%,
+    #d51212 83%,
+    #701212 85%,
+    #4a0f18 90%,
+    #000000 100%
+  );
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+    .form-control {
+      cursor: pointer;
+      &::placeholder {
+        color: #707070;
+      }
+      &:focus {
+        box-shadow: none;
+        border-style: none;
+        border: 2px solid red;
+      }
+      &:hover {
+        border: 3px solid red;
+        cursor: pointer;
+    }
+  }
+}

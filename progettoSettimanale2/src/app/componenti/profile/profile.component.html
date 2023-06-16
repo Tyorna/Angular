@@ -1,1 +1,10 @@
-<p>profile works!</p>
+<div class="p-5" style="margin-top: 56.8px;">
+  <div *ngIf="user" class="text-center">
+    <p class="text-white fs-1 mb-5">Benvenuto <span class="text-danger fw-semibold">{{ user.user.name }}</span></p>
+    <div class="mb-5">
+      <a [routerLink]="['/profilo/dettagli/', user.user.id]" routerLinkActive="active" class="btn btn-danger rounded-pill me-4">Dettagli</a>
+      <a [routerLink]="['filmpref']" routerLinkActive="active" class="btn btn-danger rounded-pill me-4">Film preferiti</a>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

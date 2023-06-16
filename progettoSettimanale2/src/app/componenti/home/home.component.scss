@@ -1,0 +1,66 @@
+.prima{
+  margin: auto 30px;
+}
+
+.seconda{
+  width: 40%;
+}
+
+.father{
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://staticfanpage.akamaized.net/wp-content/uploads/sites/25/2022/11/netflix_il_piano_di_abbonamento.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container{
+  height: 100%;
+}
+
+.banner{
+  background:linear-gradient(125deg,
+  #000000 15%,
+  #4a0f18 25%,
+  #701212 30%,
+  #d51212 32%,
+  #a51111 35%,
+  #0E1B4E 40%);
+
+  .text-end{
+    width: 40%;
+  }
+
+  img{
+    width: 170px;
+    transform: rotate(30deg);
+  }
+}
+
+.banner2{
+  min-height: 170px;
+}
+
+.banner2, .banner3{
+  background-color: #000000;
+}
+
+hr{
+  background-color: #3e3e3e;
+  height: 10px;
+  opacity: 1;
+}
+
+.img{
+    width: 300px;
+}
+
+.accordion-button{
+
+  box-shadow:none;
+  border-style: none;
+
+  &:after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+  }
+}
+
+

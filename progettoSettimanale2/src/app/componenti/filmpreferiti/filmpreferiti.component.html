@@ -1,0 +1,29 @@
+<div class="father pt-5">
+  <div class="text-center" *ngIf="!films">
+    <p class="text-white mb-3 fs-3">Caricamento lista film</p>
+    <div class="spinner-border text-danger m-auto" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column mb-4" *ngFor="let film of films">
+        <div class="card rounded position-relative">
+          <a [routerLink]="['/film/',film.id]" routerLinkActive="active">
+            <div>
+              <img src="https://image.tmdb.org/t/p/w500{{film.poster_path}}" class="card-img-top" alt="poster img">
+              <span class="text-white rating rounded px-2"><i
+                  class="bi bi-star-fill text-warning me-2"></i>{{film.vote_average}}</span>
+            </div>
+            <div class="card-body p-1 bg-secondary">
+              <p class="card-title text-dark text-center fw-semibold text-truncate px-2">{{film.title}}</p>
+              <p class="text-dark text-truncate px-2">Lingua originale: {{film.original_language}}</p>
+              <p class="text-dark text-truncate px-2">Solo per adulti: <span [ngClass]="{'text-warning': film.adult == true, 'text-dark': film.adult == false }">{{film.adult}}</span></p>
+              <p class="text-dark fs-6 text-truncate px-2">{{film.release_date}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

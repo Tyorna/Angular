@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="father">
+  <div class="container text-center">
+    <form #form="ngForm" (ngSubmit)="accedi(form)">
+      <div class="form-group mb-4">
+        <label for="email" class="mb-2 text-white fw-semibold">Email</label>
+        <input type="email" id="email" name="email" class="form-control w-50 m-auto" placeholder="pippo@email.com"
+          required ngModel>
+      </div>
+      <div class="form-group mb-3">
+        <label for="password" class="mb-2 text-white fw-semibold">Password</label>
+        <input type="password" id="password" name="password" class="form-control w-50 m-auto" placeholder="password"
+          required ngModel>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid"
+        [ngClass]="{'btn-danger': form.invalid}">Accedi</button>
+    </form>
+  </div>
+</div>

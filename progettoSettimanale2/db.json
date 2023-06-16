@@ -29,6 +29,18 @@
       "password": "$2a$10$dUc3jYtuRxxmnln0QZn.ZeJPDfdXmW/QCPKLmVJ31FiOXe1wZoir2",
       "name": "Gabriel",
       "id": 5
+    },
+    {
+      "email": "f@ff.com",
+      "password": "$2a$10$KqpNITkOleT7k8h3XBobpe9GLWIZtbBLs1fTu6rGN/VSPJkRZvgiC",
+      "name": "f",
+      "id": 6
+    },
+    {
+      "email": "neverthetwelve@gmail.com",
+      "password": "$2a$10$C6/6WhkbmhCjhkJG5Jop7eAK6NaZ8RYO7TFnjRuvpqGigt8rkecjy",
+      "name": "NeverTheTwelve",
+      "id": 7
     }
   ],
   "favorites": [
@@ -91,6 +103,31 @@
       "userId": 5,
       "movieId": 460465,
       "id": 16
+    },
+    {
+      "userId": 6,
+      "movieId": 460465,
+      "id": 17
+    },
+    {
+      "userId": 6,
+      "movieId": 567189,
+      "id": 19
+    },
+    {
+      "userId": 6,
+      "movieId": 578701,
+      "id": 20
+    },
+    {
+      "userId": 6,
+      "movieId": 573680,
+      "id": 21
+    },
+    {
+      "userId": 6,
+      "movieId": 503736,
+      "id": 22
     }
   ],
   "genres": [

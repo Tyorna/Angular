@@ -1,0 +1,32 @@
+<div class="father pt-5">
+  <div class="text-center" *ngIf="!films">
+    <p class="text-white mb-3 fs-3">Caricamento dettaglio film</p>
+    <div class="spinner-border text-danger m-auto" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div class="container mb-4 p-0">
+    <div class=" rounded position-relative m-auto d-flex">
+      <div class="w-25">
+        <img src="https://image.tmdb.org/t/p/w500{{films.poster_path}}" class="w-100" alt="poster img">
+        <span class="text-white rating rounded px-2"><i
+            class="bi bi-star-fill text-warning me-2"></i>{{films.vote_average}}</span>
+      </div>
+      <div class="card-body bg-secondary w-75">
+        <h2 class="card-title text-dark text-center fw-semibold text-truncate h2x-2 mb-4">{{films.title}}</h2>
+        <p class="text-dark px-2 text-center mb-3"><span class="fw-semibold">Trama: </span><br>{{films.overview}}</p>
+        <p class="text-dark px-2 text-center"><span class="fw-semibold">Titolo originale:
+          </span>{{films.original_title}}></p>
+        <p class="text-dark text-truncate px-2 text-center"><span class="fw-semibold">Lingua originale:
+          </span>{{films.original_language}}</p>
+        <p class="text-dark text-truncate px-2 text-center"><span class="fw-semibold">Solo per adulti: </span><span
+            [ngClass]="{'text-warning': films.adult == true, 'text-dark': films.adult == false }">{{films.adult}}</span>
+        </p>
+        <p class="text-dark fs-6 text-truncate px-2 text-center">{{films.release_date}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="text-center p-3">
+    <a [routerLink]="['/film']" routerLinkActive="active" class="btn btn-danger text-dark rounded-pill"><i class="bi bi-arrow-left-circle me-2"></i>Torna ai film</a>
+  </div>
+</div>
