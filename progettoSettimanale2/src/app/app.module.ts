@@ -16,54 +16,54 @@ import { HomeComponent } from './componenti/home/home.component';
 import { FilmpreferitiComponent } from './componenti/filmpreferiti/filmpreferiti.component';
 import { DettagliutenteComponent } from './componenti/dettagliutente/dettagliutente.component';
 import { AuthInterceptor } from './componenti/auth/auth.interceptor';
-import { DettagliFilmComponent } from './componenti/dettagli-film/dettagli-film.component';// importiamo per guardare le chiamate http.
+import { DettagliFilmComponent } from './componenti/dettagli-film/dettagli-film.component'; // importiamo per guardare le chiamate http.
 
 const rotte: Route[] = [
   {
-      path: 'film',
-      component: FilmComponent,
+    path: 'film',
+    component: FilmComponent,
+    canActivate: [AuthGuard],
   },
+  {
+    path: 'film/:id', //per arrivare ai dettagli dell'utente, è una rotta con parametri
+    component: DettagliFilmComponent,
+  },
+  /*Rotta che possiamo vedere solo se siamo loggati. Viene creata con authGuard attraverso un sistema di true e false. (spiegato nel componente).
+   */
+  {
+    path: 'profilo',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
+    children: [
       {
-        path: 'film/:id', //per arrivare ai dettagli dell'utente, è una rotta con parametri
-        component: DettagliFilmComponent
+        path: 'filmpref',
+        component: FilmpreferitiComponent,
       },
-      //canActivate: [AuthGuard]
-      /*Rotta che possiamo vedere solo se siamo loggati. Viene creata con authGuard attraverso un sistema di true e false. (spiegato nel componente).
-      */
+      {
+        path: 'dettagli/:id', //per arrivare ai dettagli dell'utente, è una rotta con parametri
+        component: DettagliutenteComponent,
+      },
+    ],
+  },
   {
-      path: 'profilo',
-      component: ProfileComponent,
-      canActivate: [AuthGuard],
-      children: [
-        {
-          path: 'filmpref',
-          component: FilmpreferitiComponent
-        },
-        {
-          path: 'dettagli/:id', //per arrivare ai dettagli dell'utente, è una rotta con parametri
-          component: DettagliutenteComponent
-        }
-      ]
-    },
+    path: 'login',
+    component: LoginComponent,
+  },
   {
-      path: 'login',
-      component: LoginComponent
-    },
+    path: '',
+    component: HomeComponent,
+  },
   {
-      path: '',
-      component: HomeComponent
-    },
+    path: 'registrazione',
+    component: RegistrazioneComponent,
+  },
   {
-      path: 'registrazione',
-      component: RegistrazioneComponent
-    },
-  {
-      path: '**',
-      component: ErrorPageComponent
-    }
+    path: '**',
+    component: ErrorPageComponent,
+  },
 
-    // I path scritti dopo questo non esistono, quindi va sempre scritto per ultimo.
-]
+  // I path scritti dopo questo non esistono, quindi va sempre scritto per ultimo.
+];
 
 @NgModule({
   declarations: [
@@ -77,19 +77,21 @@ const rotte: Route[] = [
     HomeComponent,
     FilmpreferitiComponent,
     DettagliutenteComponent,
-    DettagliFilmComponent
+    DettagliFilmComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(rotte)
+    RouterModule.forRoot(rotte),
   ],
-  providers: [  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-}], // gli si dice che a fare il sevizio sara l'interceptor con multi true perchè ce ne sono di più. Essendo stato chiamato qua intercetterà tutte le chiamate http da qualunque parte provengano.
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ], // gli si dice che a fare il sevizio sara l'interceptor con multi true perchè ce ne sono di più. Essendo stato chiamato qua intercetterà tutte le chiamate http da qualunque parte provengano.
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

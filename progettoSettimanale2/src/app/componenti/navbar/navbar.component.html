@@ -11,14 +11,14 @@
                   <a class="nav-link active text-white ms-1" aria-current="page" [routerLink]="['/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-white ms-1" [routerLink]="['/film']" routerLinkActive="active">Movies</a>
+                  <a class="nav-link text-white ms-1"  *ngIf="user" [routerLink]="['/film']" routerLinkActive="active">Movies</a>
               </li>
               <div class="dropdown" *ngIf="user">
                 <a class="btn btn-secondary nav-link text-white ms-1 dropdown-toggle" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                  Profilo
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" [routerLink]="['/profilo/dettagli/:id']">Informazioni</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/profilo/dettagli/', user.user.id]">Informazioni</a></li>
                   <li><a class="dropdown-item" [routerLink]="['profilo/filmpref']">Movies</a></li>
                 </ul>
               </div>
