@@ -31,5 +31,11 @@ cancella(id: number) {
 aggiungi(dati: Utente) {
     return this.http.post<Utente>(`${this.baseUrl}users`, dati);
 }
+
+fotoProfilo(dato: Partial<Utente>, id: number){
+  return this.http.put<Utente>(`${this.baseUrl}user/${id}`, dato);
 }
+
+}
+
 

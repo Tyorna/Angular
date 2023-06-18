@@ -14,7 +14,7 @@
       <div class="form-group  mb-3">
         <label for="password" class=" mb-2 text-white fw-semibold">Password</label>
         <input type="password" id="password" name="password" class="form-control w-50 m-auto"
-          placeholder="Crea una password" required ngModel>
+          placeholder="Password minimo 4 caratteri" minlength="4" ngModel>
       </div>
       <button type="submit" [disabled]="form.invalid" [ngClass]="{'btn-danger': form.invalid}"
         class="btn btn-success border border-3">Registrati</button>

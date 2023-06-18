@@ -5,6 +5,7 @@ import { AuthService } from '../auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { Utente } from 'src/app/models/utente.interface'; //proviamo ad importare l'interfaccia utente normale.
 import { UtentiService } from 'src/app/services/utenti.service'; //proviamo ad importare il service utente normale.
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-dettagliutente',
@@ -19,7 +20,7 @@ export class DettagliutenteComponent implements OnInit {
   (Anche il punto esclamativo funziona. Ma con questo modo se per caso i dati non arrivano va in errore quindi in questo caso è pericoloso)*/
   user!: Utente;
   id!: number;
-
+  file: string = ""; //creo un stringa per ricevere il file dell'immagine
   constructor(
     private route: ActivatedRoute,
     private utentiSrv: UtentiService
@@ -40,4 +41,28 @@ export class DettagliutenteComponent implements OnInit {
       this.user = dettaglio;
     });
   }
-}
+
+  onFileChange(event: any) {
+    const files = event.target.files as FileList;
+
+    if (files.length > 0) {
+      const _file = URL.createObjectURL(files[0]);
+      this.file = _file;
+    }
+  }
+
+  onFileChange1(value: string) {
+    if(value === "uno"){
+      this.file = "../../../assets/img/pippo.jpg";
+    } else if (value === "due"){
+      this.file = "../../../assets/img/Pluto.jpg";
+    } else if (value === "tre"){
+      this.file = "../../../assets/img/Paperino.jpg";
+    } else if(value === "quattro"){
+      this.file = "../../../assets/img/vi.jpg";
+    }
+    }
+  }
+ /*creo una funzione onFileChange che riceve un evento come parametro, il file selezionato dell'utente è disponibile in event.target.files.
+ Abbiamo bisogno farlo diventare disponibile per usarlo come proprietà di background. Quindi lo settiamo come url.*/
+

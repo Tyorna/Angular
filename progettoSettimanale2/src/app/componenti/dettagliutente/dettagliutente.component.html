@@ -1,5 +1,21 @@
 <p class="fs-4 text-white mb-5">Informazione utente</p>
-<div class="decoration w-50 m-auto p-3">
+<div class=" m-auto position-relative image-container d-block d-lg-inline-block me-5">
+  <div class="image-container position-absolute" [ngStyle]="{backgroundImage: 'url(' + file + ')'}">
+    <i class="bi bi-person-circle text-danger position-relative" *ngIf="!file"></i>
+  </div>
+  <div class="dropdown position-absolute matita">
+    <button class="btn btn-primary rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-pencil-fill p-0"></i>
+    </button>
+    <ul class="dropdown-menu">
+      <li><button class="dropdown-item text-center" type="button"><img src="../../../assets/img/pippo.jpg" class="rounded-circle w-50" alt="profile img" (click)="onFileChange1('uno')"></button></li>
+      <li><button class="dropdown-item text-center" type="button"><img src="../../../assets/img/Pluto.jpg" class="rounded-circle w-50" alt="profile img" (click)="onFileChange1('due')"></button></li>
+      <li><button class="dropdown-item text-center" type="button"><img src="../../../assets/img/Paperino.jpg" class="rounded-circle w-50" alt="profile img" (click)="onFileChange1('tre')"></button></li>
+      <li><button class="dropdown-item text-center" type="button"><img src="../../../assets/img/vi.jpg" class="rounded-circle w-50" alt="profile img" (click)="onFileChange1('quattro')"></button></li>
+    </ul>
+  </div>
+</div>
+<div class="decoration w-50 p-3 d-inline-block">
     <p class="text-white fs-4">Nome: {{user.name}}</p>
     <p class="text-white fs-4">Email: {{user.email}}</p>
 </div>
